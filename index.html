@@ -2,110 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fam7 Naturals | Natural Hair Care & Salon</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css?v=1.2">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      width: 1080px;
+      height: 1350px;
+      background: #faf7f4;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 70px;
+      color: #231d25;
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* New style for your logo image */
+    .logo {
+      height: 90px;
+      object-fit: contain;
+      mix-blend-mode: multiply; /* Blends any white background into the poster */
+    }
+
+    .tagline {
+      font-size: 18px;
+      font-weight: 600;
+      color: #532b82;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero-title {
+      font-size: 82px;
+      font-weight: 900;
+      line-height: 1.05;
+      margin-top: 20px;
+    }
+
+    .hero-title span {
+      color: #da1475;
+      display: block;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 480px;
+      position: relative;
+    }
+
+    /* Styling for the single product image */
+    .single-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid #f0f0f0; 
+    }
+
+    /* Layout specifically for the collage */
+    .collage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 155px 155px;
+      gap: 10px;
+      height: 320px;
+    }
+
+    .collage-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .badge {
+      position: absolute;
+      top: 45px;
+      left: 45px;
+      background: #da1475;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(218, 20, 117, 0.3);
+      z-index: 2;
+    }
+
+    .badge.green { background: #249743; box-shadow: 0 4px 12px rgba(36, 151, 67, 0.3); }
+
+    .card-text {
+      font-size: 24px;
+      font-weight: 800;
+      margin-top: 15px;
+    }
+
+    .cta-banner {
+      background: #532b82;
+      color: white;
+      border-radius: 30px;
+      padding: 40px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 15px 35px rgba(83, 43, 130, 0.25);
+    }
+
+    .cta-text h2 { font-size: 38px; font-weight: 900; }
+    .cta-text p { font-size: 20px; opacity: 0.85; margin-top: 5px; }
+
+    .cta-phone {
+      font-size: 32px;
+      font-weight: 900;
+      background: white;
+      color: #532b82;
+      padding: 16px 32px;
+      border-radius: 50px;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">Fam<span>7</span> Naturals</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#locations">Locations</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="header">
+    <img src="logo.png" alt="Fam7 Logo" class="logo">
+    <div class="tagline">Nature's Way</div>
+  </div>
 
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Nature's Way to Your Hair & Skin</h1>
-      <p>Specialized organic natural hair treatments, protective styling, and kids' hair care across Kampala & Wakiso.</p>
-      <div class="hero-btns">
-        <a href="#services" class="btn-primary">Explore Services</a>
-        <a href="https://wa.me/256000000000?text=Hello%20Fam7%20Naturals,%20I%20have%20an%20inquiry." target="_blank" class="btn-secondary">Chat on WhatsApp</a>
+  <div class="hero-title">
+    REAL RESULTS.
+    <span>NATURAL CARE.</span>
+  </div>
+
+  <div class="main-grid">
+    <div class="card">
+      <div class="badge">PRODUCTS</div>
+      <img class="single-img" src="all products.jpg" alt="Fam7 Products">
+      <div class="card-text">Nourish & Restore</div>
+    </div>
+    
+    <div class="card">
+      <div class="badge green">SALON</div>
+      <div class="collage-grid">
+        <img src="hairstyle1.jpg" alt="Hairstyle 1">
+        <img src="hairstyle2.jpg" alt="Hairstyle 2">
+        <img src="hairstyle5.jpg" alt="Hairstyle 3">
+        <img src="hairstyle6.jpg" alt="Hairstyle 4">
       </div>
+      <div class="card-text">Custom Styling</div>
     </div>
-  </section>
+  </div>
 
-  <section class="services-section" id="services">
-    <div class="container">
-      <h2 class="section-title">Our Salon Services</h2>
-      <p class="section-subtitle">Expert care for your natural crown delivered by professional stylists.</p>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="card-image">
-            <img src="Hair-pic.jpg" alt="Natural Hair Micro Twists Styling">
-          </div>
-          <div class="card-content">
-            <h3>Protective Styling & Twists</h3>
-            <p>Precision micro-twists, braids, and custom protective styles designed to maintain hair health and length retention.</p>
-            <a href="https://wa.me/256000000000?text=Hello%20Fam7%20Naturals,%20I%20would%20like%20to%20book%20a%20Protective%20Styling%20appointment." class="btn-book" target="_blank">Book via WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="card-image">
-            <img src="Hair-pic.jpg" alt="Kids Natural Hair Styling">
-          </div>
-          <div class="card-content">
-            <h3>Kids' Natural Styling</h3>
-            <p>Gentle, child-friendly natural hair care and creative protective styles tailored specifically for kids.</p>
-            <a href="https://wa.me/256000000000?text=Hello%20Fam7%20Naturals,%20I%20would%20like%20to%20book%20a%20Kids%20Styling%20appointment." class="btn-book" target="_blank">Book via WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="card-image">
-            <img src="Hair-pic.jpg" alt="Hair Wash and Treatment">
-          </div>
-          <div class="card-content">
-            <h3>Wash & Deep Treatment</h3>
-            <p>Revitalizing scalp cleanses and deep conditioning treatments using our organic, in-house Fam7 natural products.</p>
-            <a href="https://wa.me/256000000000?text=Hello%20Fam7%20Naturals,%20I%20would%20like%20to%20book%20a%20Wash%20%26%20Treatment%20appointment." class="btn-book" target="_blank">Book via WhatsApp</a>
-          </div>
-        </div>
-      </div>
+  <div class="cta-banner">
+    <div class="cta-text">
+      <h2>FIND YOUR FAM7.</h2>
+      <p>Visit • Shop • Style</p>
     </div>
-  </section>
-
-  <section class="locations-section" id="locations">
-    <div class="container">
-      <h2 class="section-title">Visit Our Salons</h2>
-      <p class="section-subtitle">Conveniently located branches to serve you best.</p>
-      
-      <div class="locations-grid">
-        <div class="location-card">
-          <h3>Pioneer Mall</h3>
-          <p>PI Room 26, Ben Kiwanuka Street, Kampala</p>
-        </div>
-        <div class="location-card">
-          <h3>Arua Park Plaza</h3>
-          <p>F2 Shop 635/636, Kampala</p>
-        </div>
-        <div class="location-card">
-          <h3>Wakiso Branch</h3>
-          <p>Located along Buganda Road / Wakiso</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Fam7 Naturals. All Rights Reserved. | Crafted by Jahri Web Studios</p>
-    </div>
-  </footer>
+    <div class="cta-phone">0774 460 446</div>
+  </div>
 
 </body>
 </html>
