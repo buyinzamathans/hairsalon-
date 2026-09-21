@@ -2,50 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fam7 - Nature's Way</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      width: 1080px;
-      height: 1350px;
+      width: 100%;
+      min-height: 100vh;
       background: #faf7f4;
       font-family: 'Poppins', sans-serif;
+      color: #231d25;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 80px 70px;
-      color: #231d25;
-      overflow: hidden;
+      padding: 2rem 1.5rem;
     }
 
+    /* Container to hold and align page content */
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Header Section */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
-    /* New style for your logo image */
     .logo {
-      height: 90px;
+      height: min(90px, 12vw);
+      width: auto;
       object-fit: contain;
-      mix-blend-mode: multiply; /* Blends any white background into the poster */
+      mix-blend-mode: multiply;
     }
 
     .tagline {
-      font-size: 18px;
+      font-size: clamp(0.9rem, 2vw, 1.125rem);
       font-weight: 600;
       color: #532b82;
       text-transform: uppercase;
       letter-spacing: 2px;
+      text-align: right;
     }
 
+    /* Hero Section */
     .hero-title {
-      font-size: 82px;
+      font-size: clamp(2.5rem, 7vw, 5.125rem);
       font-weight: 900;
       line-height: 1.05;
-      margin-top: 20px;
+      letter-spacing: -1px;
     }
 
     .hero-title span {
@@ -53,35 +72,41 @@
       display: block;
     }
 
+    /* Main Cards Grid */
     .main-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .main-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     .card {
-      background: white;
+      background: #ffffff;
       border-radius: 24px;
-      padding: 30px;
+      padding: 1.5rem;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 480px;
       position: relative;
+      height: 100%;
     }
 
-    /* Styling for the single product image */
+    /* Single Image Layout */
     .single-img {
       width: 100%;
       height: 320px;
       object-fit: cover;
       border-radius: 16px;
-      border: 1px solid #f0f0f0; 
+      border: 1px solid #f0f0f0;
     }
 
-    /* Layout specifically for the collage */
+    /* Collage Grid Layout */
     .collage-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -100,11 +125,11 @@
 
     .badge {
       position: absolute;
-      top: 45px;
-      left: 45px;
+      top: 2rem;
+      left: 2rem;
       background: #da1475;
-      color: white;
-      font-size: 14px;
+      color: #ffffff;
+      font-size: 0.875rem;
       font-weight: 600;
       padding: 8px 18px;
       border-radius: 20px;
@@ -112,75 +137,121 @@
       z-index: 2;
     }
 
-    .badge.green { background: #249743; box-shadow: 0 4px 12px rgba(36, 151, 67, 0.3); }
-
-    .card-text {
-      font-size: 24px;
-      font-weight: 800;
-      margin-top: 15px;
+    .badge.green {
+      background: #249743;
+      box-shadow: 0 4px 12px rgba(36, 151, 67, 0.3);
     }
 
+    .card-text {
+      font-size: clamp(1.25rem, 3vw, 1.5rem);
+      font-weight: 800;
+      margin-top: 1rem;
+    }
+
+    /* Banner CTA */
     .cta-banner {
       background: #532b82;
-      color: white;
+      color: #ffffff;
       border-radius: 30px;
-      padding: 40px 50px;
+      padding: 2.5rem;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
       box-shadow: 0 15px 35px rgba(83, 43, 130, 0.25);
     }
 
-    .cta-text h2 { font-size: 38px; font-weight: 900; }
-    .cta-text p { font-size: 20px; opacity: 0.85; margin-top: 5px; }
+    @media (min-width: 768px) {
+      .cta-banner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.5rem 3.125rem;
+      }
+    }
+
+    .cta-text h2 {
+      font-size: clamp(1.8rem, 4vw, 2.375rem);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .cta-text p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      opacity: 0.85;
+      margin-top: 5px;
+    }
 
     .cta-phone {
-      font-size: 32px;
+      font-size: clamp(1.25rem, 3vw, 2rem);
       font-weight: 900;
-      background: white;
+      background: #ffffff;
       color: #532b82;
-      padding: 16px 32px;
+      padding: 1rem 2rem;
       border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta-phone:hover {
+      opacity: 0.9;
+    }
+
+    /* Desktop Spacing Refinement */
+    @media (min-width: 1024px) {
+      body {
+        padding: 4rem 3.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <img src="logo.png" alt="Fam7 Logo" class="logo">
-    <div class="tagline">Nature's Way</div>
-  </div>
-
-  <div class="hero-title">
-    REAL RESULTS.
-    <span>NATURAL CARE.</span>
-  </div>
-
-  <div class="main-grid">
-    <div class="card">
-      <div class="badge">PRODUCTS</div>
-      <img class="single-img" src="all products.jpg" alt="Fam7 Products">
-      <div class="card-text">Nourish & Restore</div>
-    </div>
+  <div class="page-container">
     
-    <div class="card">
-      <div class="badge green">SALON</div>
-      <div class="collage-grid">
-        <img src="hairstyle1.jpg" alt="Hairstyle 1">
-        <img src="hairstyle2.jpg" alt="Hairstyle 2">
-        <img src="hairstyle5.jpg" alt="Hairstyle 3">
-        <img src="hairstyle6.jpg" alt="Hairstyle 4">
-      </div>
-      <div class="card-text">Custom Styling</div>
-    </div>
-  </div>
+    <!-- Header -->
+    <header class="header">
+      <img src="logo.png" alt="Fam7 Logo" class="logo">
+      <div class="tagline">Nature's Way</div>
+    </header>
 
-  <div class="cta-banner">
-    <div class="cta-text">
-      <h2>FIND YOUR FAM7.</h2>
-      <p>Visit • Shop • Style</p>
-    </div>
-    <div class="cta-phone">0774 460 446</div>
+    <!-- Hero Section -->
+    <section class="hero-title">
+      REAL RESULTS.
+      <span>NATURAL CARE.</span>
+    </section>
+
+    <!-- Main Grid Cards -->
+    <main class="main-grid">
+      <div class="card">
+        <div class="badge">PRODUCTS</div>
+        <img class="single-img" src="all products.jpg" alt="Fam7 Products">
+        <div class="card-text">Nourish & Restore</div>
+      </div>
+      
+      <div class="card">
+        <div class="badge green">SALON</div>
+        <div class="collage-grid">
+          <img src="hairstyle1.jpg" alt="Hairstyle 1">
+          <img src="hairstyle2.jpg" alt="Hairstyle 2">
+          <img src="hairstyle5.jpg" alt="Hairstyle 3">
+          <img src="hairstyle6.jpg" alt="Hairstyle 4">
+        </div>
+        <div class="card-text">Custom Styling</div>
+      </div>
+    </main>
+
+    <!-- Call to Action Banner -->
+    <footer class="cta-banner">
+      <div class="cta-text">
+        <h2>FIND YOUR FAM7.</h2>
+        <p>Visit • Shop • Style</p>
+      </div>
+      <a href="tel:0774460446" class="cta-phone">0774 460 446</a>
+    </footer>
+
   </div>
 
 </body>
