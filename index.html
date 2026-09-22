@@ -4,31 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fam7 - Nature's Way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 9:16 Canvas Wrapper -->
+  <!-- 9:16 Aspect Ratio Canvas Container -->
   <div class="canvas-9-16">
     
     <!-- Header -->
     <header class="header">
-      <img src="logo.png" alt="Fam7 Logo" class="logo">
+      <div class="logo-box">
+        <img src="logo.png" alt="Fam7 Logo" class="logo">
+      </div>
       <div class="tagline">NATURE'S WAY</div>
     </header>
 
     <!-- Hero Title -->
     <section class="hero-title">
-      REAL RESULTS.
-      <span>NATURAL CARE.</span>
+      <h1>REAL RESULTS.</h1>
+      <h1 class="highlight">NATURAL CARE.</h1>
     </section>
 
-    <!-- Side-by-Side Main Grid -->
+    <!-- Side-by-Side Main Cards -->
     <main class="main-grid">
       <!-- Products Card -->
       <div class="card">
-        <div class="badge">PRODUCTS</div>
-        <div class="img-wrapper">
+        <div class="card-image-area">
+          <span class="badge badge-pink">PRODUCTS</span>
           <img class="single-img" src="all products.jpg" alt="Fam7 Products">
         </div>
         <div class="card-text">Nourish & Restore</div>
@@ -36,18 +41,20 @@
       
       <!-- Salon Card -->
       <div class="card">
-        <div class="badge green">SALON</div>
-        <div class="collage-grid">
-          <img src="hairstyle1.jpg" alt="Hairstyle 1">
-          <img src="hairstyle2.jpg" alt="Hairstyle 2">
-          <img src="hairstyle5.jpg" alt="Hairstyle 3">
-          <img src="hairstyle6.jpg" alt="Hairstyle 4">
+        <div class="card-image-area">
+          <span class="badge badge-green">SALON</span>
+          <div class="collage-grid">
+            <img src="hairstyle1.jpg" alt="Hairstyle 1">
+            <img src="hairstyle2.jpg" alt="Hairstyle 2">
+            <img src="hairstyle5.jpg" alt="Hairstyle 3">
+            <img src="hairstyle6.jpg" alt="Hairstyle 4">
+          </div>
         </div>
         <div class="card-text">Custom Styling</div>
       </div>
     </main>
 
-    <!-- CTA Banner -->
+    <!-- Footer / CTA Banner -->
     <footer class="cta-banner">
       <div class="cta-text">
         <h2>FIND YOUR FAM7.</h2>
