@@ -21,7 +21,7 @@ body {
   max-width: 450px; /* Standard mobile portrait view width */
   aspect-ratio: 9 / 16;
   background-color: #f7f7f5; /* Off-white textured background */
-  padding: 32px 24px;
+  padding: 16px 24px 28px 24px; /* Reduced top padding to remove gap */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,33 +34,31 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.logo-box {
-  background: #fff;
-  padding: 8px 14px;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
+/* Logo Fix: Seamless blend with background */
 .logo {
-  height: 28px;
-  display: block;
+  height: 48px;
+  width: auto;
   object-fit: contain;
+  mix-blend-mode: multiply; /* Blends logo background seamlessly */
+  display: block;
 }
 
 .tagline {
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #3b306b; /* Deep purple matching logo/theme */
-  margin-top: 6px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #3b306b;
+  text-transform: uppercase;
 }
 
 /* Hero Title Section */
 .hero-title {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .hero-title h1 {
@@ -72,7 +70,7 @@ body {
 }
 
 .hero-title h1.highlight {
-  color: #d1126e; /* Vibrant pink from branding */
+  color: #d1126e; /* Vibrant pink */
 }
 
 /* Main Grid Layout */
@@ -80,7 +78,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin: 15px 0;
+  margin: 12px 0;
 }
 
 /* Cards */
@@ -157,7 +155,7 @@ body {
 
 /* Footer CTA Banner */
 .cta-banner {
-  background-color: #4b267d; /* Deep purple background */
+  background-color: #4b267d;
   border-radius: 18px;
   padding: 18px 20px;
   display: flex;
