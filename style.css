@@ -134,6 +134,7 @@ body {
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, background-color 0.2s ease;
+  position: relative;
 }
 
 .circle-action-btn:hover {
@@ -144,6 +145,51 @@ body {
 .action-icon {
   width: 20px;
   height: 20px;
+}
+
+/* WhatsApp Wrapper for Stacking & Positioning */
+.whatsapp-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.whatsapp-btn {
+  z-index: 2;
+}
+
+/* Slide-Out Appointment Tag */
+.appointment-tag {
+  position: absolute;
+  left: 20px;
+  white-space: nowrap;
+  background: rgba(26, 26, 26, 0.88);
+  color: #ffffff;
+  font-size: clamp(0.68rem, 1.4dvh, 0.75rem);
+  font-weight: 700;
+  padding: 8px 14px 8px 28px;
+  border-radius: 0 20px 20px 0;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  z-index: 1;
+  animation: slideOutTag 3.5s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+.appointment-tag:hover {
+  color: #ffffff;
+}
+
+/* Slide Keyframe Animation */
+@keyframes slideOutTag {
+  0%, 20% {
+    transform: translateX(-15px);
+    opacity: 0;
+  }
+  50%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Main Grid Layout */
