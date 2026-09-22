@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Fluid Responsive Canvas Container with Background Image */
+/* Canvas Container */
 .canvas-container {
   width: min(100vw, calc(100dvh * 9 / 16));
   min-height: 100vh;
@@ -27,7 +27,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   
-  /* Clear Background Image */
   background-image: url('Hair-pic.jpg');
   background-size: cover;
   background-position: center;
@@ -60,7 +59,7 @@ body {
   letter-spacing: 0.6px;
   color: #3b306b;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   padding: 3px 8px;
   border-radius: 6px;
   backdrop-filter: blur(4px);
@@ -79,13 +78,12 @@ body {
   margin-bottom: 2px;
 }
 
-/* Artistic Text Backdrop Chips */
+/* Text Backdrop Chips */
 .text-backdrop {
   display: inline-block;
   padding: 2px 12px;
   border-radius: 8px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .text-backdrop.dark {
@@ -114,24 +112,35 @@ body {
   max-width: 95%;
 }
 
-/* Hero Contact Us WhatsApp Button */
-.hero-btn {
-  display: inline-block;
-  margin-top: 12px;
-  background-color: #25d366;
+/* Hero Action Area */
+.hero-action {
+  margin-top: 10px;
+}
+
+/* Circular Minimalist Call Button */
+.call-circle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.85);
   color: #ffffff;
-  font-size: clamp(0.75rem, 1.6dvh, 0.82rem);
-  font-weight: 800;
-  padding: 8px 18px;
-  border-radius: 25px;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.hero-btn:hover {
-  background-color: #1ebe5d;
-  transform: translateY(-1px);
+.call-circle-btn:hover {
+  background: #1a1a1a;
+  transform: scale(1.05);
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* Main Grid Layout */
@@ -142,13 +151,13 @@ body {
   margin: 0.8dvh 0;
 }
 
-/* Cards with Frosted White Backdrop */
+/* Cards */
 .card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-radius: 16px;
   padding: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -191,7 +200,7 @@ body {
   border-radius: 8px;
 }
 
-/* Card Badges */
+/* Badges */
 .badge {
   position: absolute;
   top: 6px;
@@ -209,8 +218,8 @@ body {
   background-color: #d1126e;
 }
 
-.badge-green {
-  background-color: #10a37f;
+.badge-dark {
+  background-color: #1a1a1a;
 }
 
 .card-text {
@@ -230,7 +239,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   gap: 12px;
 }
 
