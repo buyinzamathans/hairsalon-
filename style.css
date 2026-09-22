@@ -6,28 +6,26 @@
 }
 
 body {
-  background-color: #e5e5e5;
+  background-color: #f7f7f5; /* Match canvas background to body */
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
   color: #111;
 }
 
-/* 9:16 Canvas Wrapper */
-.canvas-9-16 {
+/* Responsive Main Canvas Wrapper */
+.canvas-container {
   width: 100%;
-  max-width: 450px; /* Standard mobile portrait view width */
-  aspect-ratio: 9 / 16;
-  background-color: #f7f7f5; /* Off-white textured background */
-  padding: 16px 24px 28px 24px; /* Reduced top padding to remove gap */
+  max-width: 450px;
+  min-height: 100vh;
+  background-color: #f7f7f5;
+  padding: 16px 20px 20px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 /* Header */
@@ -35,16 +33,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0;
-  padding-top: 0;
+  width: 100%;
 }
 
-/* Logo Fix: Seamless blend with background */
+/* Logo Fix: Remove white background with blend mode */
 .logo {
-  height: 48px;
+  height: 44px;
   width: auto;
   object-fit: contain;
-  mix-blend-mode: multiply; /* Blends logo background seamlessly */
+  mix-blend-mode: multiply;
   display: block;
 }
 
@@ -58,7 +55,7 @@ body {
 
 /* Hero Title Section */
 .hero-title {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .hero-title h1 {
@@ -70,7 +67,7 @@ body {
 }
 
 .hero-title h1.highlight {
-  color: #d1126e; /* Vibrant pink */
+  color: #d1126e;
 }
 
 /* Main Grid Layout */
@@ -78,7 +75,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin: 12px 0;
 }
 
 /* Cards */
@@ -163,6 +159,7 @@ body {
   align-items: center;
   color: #ffffff;
   box-shadow: 0 8px 24px rgba(75, 38, 125, 0.25);
+  margin-top: auto; /* Keeps CTA banner docked near the bottom if vertical room permits */
 }
 
 .cta-text h2 {
