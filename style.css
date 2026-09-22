@@ -60,9 +60,13 @@ body {
   letter-spacing: 0.6px;
   color: #3b306b;
   text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 3px 8px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
 }
 
-/* Hero Title Section - Reduced Glow / Soft Shadows */
+/* Hero Title Section */
 .hero-title {
   margin: 0.8dvh 0;
 }
@@ -70,40 +74,58 @@ body {
 .hero-title h1 {
   font-size: clamp(1.8rem, 4.2dvh, 2.2rem);
   font-weight: 900;
-  line-height: 1.08;
-  color: #1a1a1a;
+  line-height: 1.25;
   letter-spacing: -0.5px;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
 }
 
-.hero-title h1.highlight {
-  color: #d1126e;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+/* Artistic Text Backdrop Chips */
+.text-backdrop {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.text-backdrop.dark {
+  background: rgba(26, 26, 26, 0.85);
+  color: #ffffff;
+}
+
+.text-backdrop.pink {
+  background: rgba(209, 18, 110, 0.9);
+  color: #ffffff;
+}
+
+.text-backdrop.light {
+  background: rgba(255, 255, 255, 0.88);
+  color: #111111;
+  padding: 8px 12px;
+  border-radius: 12px;
 }
 
 /* Hero Body Text */
 .hero-subtext {
   font-size: clamp(0.72rem, 1.5dvh, 0.82rem);
   font-weight: 600;
-  color: #222222;
   line-height: 1.35;
   margin-top: 8px;
   max-width: 95%;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Hero Contact Us WhatsApp Button */
 .hero-btn {
   display: inline-block;
   margin-top: 12px;
-  background-color: #25d366; /* Official WhatsApp Green */
+  background-color: #25d366;
   color: #ffffff;
   font-size: clamp(0.75rem, 1.6dvh, 0.82rem);
   font-weight: 800;
   padding: 8px 18px;
   border-radius: 25px;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
