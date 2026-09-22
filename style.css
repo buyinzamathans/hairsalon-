@@ -12,20 +12,19 @@ html, body {
   background: #faf7f4;
   font-family: 'Poppins', sans-serif;
   color: #231d25;
-  overflow-x: hidden;
+  overflow: hidden; /* Keeps screen perfectly fixed like an app page */
 }
 
-/* Fullscreen Responsive Page Container */
+/* Page Wrapper matching exact proportions */
 .page-container {
   width: 100%;
-  max-width: 1100px;
-  min-height: 100dvh; /* Uses Dynamic Viewport Height to account for mobile browser bars */
+  max-width: 520px; /* Constrains max width on wider screens to keep identical design ratio */
+  height: 100svh; /* Uses Short Viewport Height to fit mobile browser address bar accurately */
   margin: 0 auto;
-  padding: 1.25rem 1rem;
+  padding: 5svh 6vw 4svh 6vw; /* Generous vertical padding to match original poster margins */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
 }
 
 /* Header Section */
@@ -33,30 +32,30 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 0.25rem;
 }
 
 .logo {
-  height: clamp(36px, 6vh, 65px);
+  height: clamp(32px, 4.5svh, 55px);
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
 .tagline {
-  font-size: clamp(0.7rem, 1.5vw, 0.95rem);
+  font-size: clamp(0.65rem, 1.3svh, 0.85rem);
   font-weight: 700;
   color: #532b82;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
 }
 
-/* Hero Title - Slimmed down font size & line height */
+/* Hero Section */
 .hero-title {
-  font-size: clamp(1.65rem, 5.2vh, 4rem);
+  font-size: clamp(1.6rem, 3.8svh, 3.2rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.5px;
+  margin: 1.5svh 0 1svh 0;
 }
 
 .hero-title span {
@@ -64,36 +63,33 @@ html, body {
   display: block;
 }
 
-/* Main Grid (Side by Side) */
+/* Side-by-Side Card Grid */
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  flex-grow: 1;
-  align-items: stretch;
+  gap: 3.5vw;
+  margin: 1svh 0;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 0.85rem;
+  border-radius: 18px;
+  padding: 3.5vw;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  height: 28svh; /* Exact card height proportion */
 }
 
-/* Products Single Image */
+/* Image Container Heights */
 .img-wrapper {
   width: 100%;
-  flex-grow: 1;
+  height: 18svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1.8rem; /* Space for the badge above */
-  max-height: 22vh;
 }
 
 .single-img {
@@ -108,10 +104,8 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 6px;
-  flex-grow: 1;
-  margin-top: 1.8rem; /* Space for the badge above */
-  max-height: 22vh;
+  gap: 5px;
+  height: 18svh;
 }
 
 .collage-grid img {
@@ -121,16 +115,16 @@ html, body {
   border-radius: 6px;
 }
 
-/* Slimmer Badges */
+/* Badges */
 .badge {
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
+  top: 10px;
+  left: 10px;
   background: #da1475;
   color: #ffffff;
-  font-size: clamp(0.58rem, 1.1vw, 0.75rem);
+  font-size: clamp(0.5rem, 1svh, 0.65rem);
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(218, 20, 117, 0.25);
   z-index: 2;
@@ -143,71 +137,68 @@ html, body {
 }
 
 .card-text {
-  font-size: clamp(0.82rem, 1.8vw, 1.25rem);
+  font-size: clamp(0.75rem, 1.4svh, 1.05rem);
   font-weight: 800;
-  margin-top: 0.5rem;
-  line-height: 1.2;
+  color: #231d25;
+  line-height: 1.1;
 }
 
-/* Slim CTA Banner Footer */
+/* Footer Banner CTA */
 .cta-banner {
   background: #532b82;
   color: #ffffff;
-  border-radius: 18px;
-  padding: 0.85rem 1.15rem;
+  border-radius: 20px;
+  padding: 2svh 4vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 10px 25px rgba(83, 43, 130, 0.2);
+  box-shadow: 0 10px 25px rgba(83, 43, 130, 0.25);
 }
 
 .cta-text h2 {
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-size: clamp(0.95rem, 2.1svh, 1.5rem);
   font-weight: 900;
   line-height: 1.1;
 }
 
 .cta-text p {
-  font-size: clamp(0.65rem, 1.4vw, 0.95rem);
+  font-size: clamp(0.6rem, 1.2svh, 0.85rem);
   opacity: 0.85;
   margin-top: 2px;
 }
 
 .cta-phone {
-  font-size: clamp(0.75rem, 1.8vw, 1.3rem);
+  font-size: clamp(0.75rem, 1.6svh, 1.1rem);
   font-weight: 900;
   background: #ffffff;
   color: #532b82;
-  padding: 0.55rem 1rem;
-  border-radius: 40px;
+  padding: 1.2svh 3.5vw;
+  border-radius: 30px;
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Tablet & Desktop Layout Adjustments */
-@media (min-width: 768px) {
+/* Larger Screens / Desktop View Center Frame */
+@media (min-width: 600px) {
+  html, body {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
   .page-container {
-    padding: 2.5rem 2rem;
-    gap: 1.75rem;
+    height: auto;
+    min-height: 850px;
+    padding: 2.5rem;
   }
 
   .card {
-    padding: 1.25rem;
-    border-radius: 20px;
+    height: 340px;
   }
 
   .img-wrapper, .collage-grid {
-    max-height: 350px;
-    margin-top: 2.2rem;
-  }
-
-  .cta-banner {
-    padding: 1.5rem 2.2rem;
-    border-radius: 24px;
-  }
-
-  .cta-phone {
-    padding: 0.75rem 1.5rem;
+    height: 240px;
   }
 }
