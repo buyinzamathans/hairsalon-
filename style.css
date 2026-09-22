@@ -6,30 +6,25 @@
   box-sizing: border-box;
 }
 
-body {
-  width: 100vw;
+html, body {
+  width: 100%;
   min-height: 100vh;
-  background: #111111; /* Dark frame backdrop to highlight the 9:16 card on desktop */
+  background: #faf7f4; /* Whole page background - no black bars */
   font-family: 'Poppins', sans-serif;
   color: #231d25;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
 }
 
-/* Perfect 9:16 Aspect Ratio Canvas Container */
-.canvas-9-16 {
-  width: min(100vw, 540px); /* 540px x 960px maintains 9:16 ratio on desktop screens */
-  aspect-ratio: 9 / 16;
-  background: #faf7f4;
-  padding: 8% 7%;
+/* Fullscreen Responsive Page Container */
+.page-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  overflow: hidden;
+  gap: 2rem;
 }
 
 /* Header Section */
@@ -40,14 +35,14 @@ body {
 }
 
 .logo {
-  height: 48px;
+  height: clamp(50px, 8vw, 80px);
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
 .tagline {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 1.8vw, 1.1rem);
   font-weight: 700;
   color: #532b82;
   text-transform: uppercase;
@@ -56,7 +51,7 @@ body {
 
 /* Hero Section */
 .hero-title {
-  font-size: clamp(2rem, 7.5vw, 2.75rem);
+  font-size: clamp(2.2rem, 7vw, 4.8rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -1px;
@@ -67,48 +62,41 @@ body {
   display: block;
 }
 
-/* Side-by-side grid forced to match sketch */
+/* Side-by-Side Main Grid (Always 2 Columns) */
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 1rem;
+  flex-grow: 1;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  aspect-ratio: 1 / 1.15;
+  min-height: 280px;
 }
 
-/* Image wrappers */
-.img-wrapper {
-  width: 100%;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Products Single Image */
 .single-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: clamp(160px, 25vh, 320px);
+  object-fit: cover;
   border-radius: 12px;
 }
 
-/* Collage Grid Layout */
+/* Salon Collage Grid */
 .collage-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 6px;
-  height: 70%;
+  gap: 8px;
+  height: clamp(160px, 25vh, 320px);
 }
 
 .collage-grid img {
@@ -121,61 +109,89 @@ body {
 /* Badges */
 .badge {
   position: absolute;
-  top: 18px;
-  left: 18px;
+  top: 1.5rem;
+  left: 1.5rem;
   background: #da1475;
   color: #ffffff;
-  font-size: 0.65rem;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
   font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 14px;
-  box-shadow: 0 3px 8px rgba(218, 20, 117, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(218, 20, 117, 0.3);
   z-index: 2;
 }
 
 .badge.green {
   background: #249743;
-  box-shadow: 0 3px 8px rgba(36, 151, 67, 0.3);
+  box-shadow: 0 4px 10px rgba(36, 151, 67, 0.3);
 }
 
 .card-text {
-  font-size: 0.85rem;
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
   font-weight: 800;
-  color: #231d25;
-  margin-top: 4px;
+  margin-top: 0.75rem;
 }
 
-/* Banner CTA Footer */
+/* CTA Banner Footer */
 .cta-banner {
   background: #532b82;
   color: #ffffff;
-  border-radius: 20px;
-  padding: 18px 20px;
+  border-radius: 24px;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 10px 25px rgba(83, 43, 130, 0.25);
+  gap: 1rem;
+  box-shadow: 0 15px 30px rgba(83, 43, 130, 0.25);
 }
 
 .cta-text h2 {
-  font-size: 1.15rem;
+  font-size: clamp(1.2rem, 3.2vw, 2.2rem);
   font-weight: 900;
   line-height: 1.1;
 }
 
 .cta-text p {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 1.8vw, 1.1rem);
   opacity: 0.85;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .cta-phone {
-  font-size: 0.95rem;
+  font-size: clamp(0.9rem, 2.2vw, 1.6rem);
   font-weight: 900;
   background: #ffffff;
   color: #532b82;
-  padding: 10px 18px;
-  border-radius: 40px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
   text-decoration: none;
   white-space: nowrap;
+}
+
+/* Mobile Screen Small Padding Adjustment */
+@media (max-width: 480px) {
+  .page-container {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+  
+  .card {
+    padding: 0.85rem;
+    border-radius: 16px;
+  }
+  
+  .badge {
+    top: 1rem;
+    left: 1rem;
+    padding: 4px 10px;
+  }
+
+  .cta-banner {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+  }
+
+  .cta-phone {
+    padding: 0.6rem 1rem;
+  }
 }
