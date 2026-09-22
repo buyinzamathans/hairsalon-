@@ -78,7 +78,7 @@ body {
   margin-bottom: 2px;
 }
 
-/* Text Backdrop Chips */
+/* Text Backdrop Chips matched with Badges */
 .text-backdrop {
   display: inline-block;
   padding: 2px 12px;
@@ -86,13 +86,13 @@ body {
   backdrop-filter: blur(6px);
 }
 
-.text-backdrop.dark {
-  background: rgba(26, 26, 26, 0.85);
+.text-backdrop.green {
+  background: #10a37f;
   color: #ffffff;
 }
 
 .text-backdrop.pink {
-  background: rgba(209, 18, 110, 0.9);
+  background: #d1126e;
   color: #ffffff;
 }
 
@@ -112,13 +112,16 @@ body {
   max-width: 95%;
 }
 
-/* Hero Action Area */
-.hero-action {
+/* Circular Action Buttons Container */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-top: 10px;
 }
 
-/* Circular Minimalist Call Button */
-.call-circle-btn {
+/* Circular Minimalist Action Buttons */
+.circle-action-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -133,12 +136,12 @@ body {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.call-circle-btn:hover {
+.circle-action-btn:hover {
   background: #1a1a1a;
   transform: scale(1.05);
 }
 
-.phone-icon {
+.action-icon {
   width: 20px;
   height: 20px;
 }
@@ -218,8 +221,8 @@ body {
   background-color: #d1126e;
 }
 
-.badge-dark {
-  background-color: #1a1a1a;
+.badge-green {
+  background-color: #10a37f;
 }
 
 .card-text {
