@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Fluid Responsive Canvas Container with Pure Background Image */
+/* Fluid Responsive Canvas Container with Background Image */
 .canvas-container {
   width: min(100vw, calc(100dvh * 9 / 16));
   min-height: 100vh;
@@ -60,10 +60,9 @@ body {
   letter-spacing: 0.6px;
   color: #3b306b;
   text-transform: uppercase;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
-/* Hero Title Section */
+/* Hero Title Section - Reduced Glow / Soft Shadows */
 .hero-title {
   margin: 0.8dvh 0;
 }
@@ -74,23 +73,43 @@ body {
   line-height: 1.08;
   color: #1a1a1a;
   letter-spacing: -0.5px;
-  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .hero-title h1.highlight {
   color: #d1126e;
-  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Hero Body Text */
 .hero-subtext {
   font-size: clamp(0.72rem, 1.5dvh, 0.82rem);
-  font-weight: 700;
-  color: #111111;
+  font-weight: 600;
+  color: #222222;
   line-height: 1.35;
   margin-top: 8px;
   max-width: 95%;
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Hero Contact Us WhatsApp Button */
+.hero-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background-color: #25d366; /* Official WhatsApp Green */
+  color: #ffffff;
+  font-size: clamp(0.75rem, 1.6dvh, 0.82rem);
+  font-weight: 800;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-1px);
 }
 
 /* Main Grid Layout */
@@ -107,7 +126,7 @@ body {
   backdrop-filter: blur(8px);
   border-radius: 16px;
   padding: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -189,7 +208,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   gap: 12px;
 }
 
