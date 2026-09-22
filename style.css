@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f7f7f5;
+  background-color: #0f0a15;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
@@ -17,16 +17,25 @@ body {
   overflow-x: hidden;
 }
 
-/* Fluid Responsive Canvas Container */
+/* Fluid Responsive Canvas Container with Background Image */
 .canvas-container {
   width: min(100vw, calc(100dvh * 9 / 16));
   min-height: 100vh;
   min-height: 100dvh;
-  background-color: #f7f7f5;
   padding: 4.5dvh 6vw 3.5dvh 6vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
+  /* Background Image Settings */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.82), 
+      rgba(255, 255, 255, 0.88)
+    ), 
+    url('Hair-pic.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Header */
@@ -77,8 +86,8 @@ body {
 /* Hero Body Text */
 .hero-subtext {
   font-size: clamp(0.72rem, 1.5dvh, 0.82rem);
-  font-weight: 500;
-  color: #555555;
+  font-weight: 600;
+  color: #333333;
   line-height: 1.35;
   margin-top: 8px;
   max-width: 95%;
@@ -92,12 +101,13 @@ body {
   margin: 0.8dvh 0;
 }
 
-/* Cards */
+/* Cards with Frosted White Backdrop */
 .card {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
   border-radius: 16px;
   padding: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -109,7 +119,7 @@ body {
   aspect-ratio: 1;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #fdfdfd;
+  background-color: #ffffff;
 }
 
 .single-img {
@@ -118,7 +128,7 @@ body {
   object-fit: contain;
 }
 
-/* Salon Collage Grid with Rounded Thumbnails */
+/* Salon Collage Grid */
 .collage-wrapper {
   background-color: transparent;
   overflow: visible;
@@ -179,7 +189,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(75, 38, 125, 0.25);
+  box-shadow: 0 8px 24px rgba(75, 38, 125, 0.35);
   gap: 12px;
 }
 
