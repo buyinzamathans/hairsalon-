@@ -6,26 +6,28 @@
 }
 
 body {
-  background-color: #f7f7f5; /* Match canvas background to body */
+  background-color: #e5e5e5;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   color: #111;
 }
 
-/* Responsive Main Canvas Wrapper */
-.canvas-container {
+/* Fixed Aspect Ratio Poster/Flyer Canvas */
+.canvas-9-16 {
   width: 100%;
   max-width: 450px;
-  min-height: 100vh;
+  aspect-ratio: 9 / 16;
   background-color: #f7f7f5;
-  padding: 16px 20px 20px 20px;
+  padding: 42px 24px 36px 24px; /* Generous top/bottom margins for ample spacing */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: space-between; /* Evenly distributes spacing top-to-bottom */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Header */
@@ -33,15 +35,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
-/* Logo Fix: Remove white background with blend mode */
+/* Logo Fix: Seamless blend with background */
 .logo {
-  height: 44px;
+  height: 48px;
   width: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;
+  mix-blend-mode: multiply; /* Blends logo background into canvas */
   display: block;
 }
 
@@ -55,7 +56,7 @@ body {
 
 /* Hero Title Section */
 .hero-title {
-  margin-top: 4px;
+  margin: 12px 0;
 }
 
 .hero-title h1 {
@@ -75,6 +76,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  margin: 8px 0;
 }
 
 /* Cards */
@@ -159,7 +161,6 @@ body {
   align-items: center;
   color: #ffffff;
   box-shadow: 0 8px 24px rgba(75, 38, 125, 0.25);
-  margin-top: auto; /* Keeps CTA banner docked near the bottom if vertical room permits */
 }
 
 .cta-text h2 {
